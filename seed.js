@@ -153,8 +153,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {
  
-  console.log('Connected to mongo.')
-	console.log("Seeding, I'll tell you when it's done.");
+  console.log('Connected to mongo.');
+  console.log("Seeding, I'll tell you when it's done.");
 
   let chatList = list.map((name, x)=>{
   
@@ -218,10 +218,6 @@ db.once('open', function() {
         badges: [badges[b]]
       };
     });    
-
-    var av = Math.floor((Math.random() * 4));
-    var b = Math.floor((Math.random() * 4));
-    var s = Math.floor((Math.random() * 10));
 
     return {
       room: x,
