@@ -141,15 +141,20 @@ let db = mongoose.connection;
 
 let Chats = mongoose.model('Chats', chat);
 
-let modList = new Array(Math.floor(Math.random() * 10));
-let vipList = new Array(10);
+let modList = new Array(Math.floor(1 + Math.random() * 10)).fill(1);
+
+console.log(modList);
+
+let vipList = new Array(10).fill(1);
+
+console.log(vipList);
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {
  
-  console.log('Connected to mongo.')
-	console.log("Seeding, I'll tell you when it's done.");
+  console.log('Connected to mongo.');
+  console.log("Seeding, I'll tell you when it's done.");
 
   let chatList = list.map((name, x)=>{
   
@@ -160,7 +165,7 @@ db.once('open', function() {
       var s = Math.floor((Math.random() * 10));
 
       return {
-        name: faker.internet.userName(),
+        name,
         type: 'user',
         url: 'https://www.twitch.tv/' + name,
         avatar: avatars[av],
@@ -181,9 +186,12 @@ db.once('open', function() {
       var av = Math.floor((Math.random() * 4));
       var b = Math.floor((Math.random() * 4));
       var s = Math.floor((Math.random() * 10));
-
+      
+      name = Math.floor((Math.random() * list.length));
+      name = list[name];
+      
       return {
-        name: faker.internet.userName(),
+        name,
         type: 'vip',
         url: 'https://www.twitch.tv/' + name,
         avatar: avatars[av],
@@ -198,9 +206,12 @@ db.once('open', function() {
       var b = Math.floor((Math.random() * 4));
       var s = Math.floor((Math.random() * 10));
 
+      name = Math.floor((Math.random() * list.length));
+      name = list[name];
+ 
       return {
-        name: faker.internet.userName(),
-        type: 'mod',
+        name,
+        type: 'moder',
         url: 'https://www.twitch.tv/' + name,
         avatar: avatars[av],
         splash: splash[s],
@@ -208,14 +219,10 @@ db.once('open', function() {
       };
     });    
 
-    var av = Math.floor((Math.random() * 4));
-    var b = Math.floor((Math.random() * 4));
-    var s = Math.floor((Math.random() * 10));
-
     return {
       room: x,
       owner: name,
-      mods: modList,
+      mods: modLocal,
       vips: vipLocal,
       users: userLocal,
       msgs: msgLocal
