@@ -7,10 +7,7 @@
     "test": "jest --coverage --passWithNoTests",
     "test:watch": "jest --watch --coverage --passWithNoTests",
     "seed": "node seed.js",
-<<<<<<< HEAD
     "build": "webpack --open",
-=======
->>>>>>> f30c08d48754b891632152139497891fcc144e30
     "server": "node server.js",
     "start": "webpack-dev-server --open --mode development"
   },
@@ -59,12 +56,9 @@
     "ascii-art-image": "^1.2.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
-<<<<<<< HEAD
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
-=======
->>>>>>> f30c08d48754b891632152139497891fcc144e30
     "html-loader": "^0.5.5",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
