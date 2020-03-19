@@ -7,7 +7,10 @@
 html, body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   height: 100%;
+=======
+>>>>>>> f30c08d48754b891632152139497891fcc144e30
 }
 
 body {
@@ -16,6 +19,26 @@ body {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
+<<<<<<< HEAD
 #chat-container {
   height: 100%;
 }
+=======
+.intro {
+  color: #dfdfdf;
+  margin: auto;
+  padding-top: 50px;
+  width: 50%;
+}
+
+.intro > h1 {
+  font-size: 400%;
+  font-family: 'Trade Winds';
+  color: pink;
+}
+
+.intro > p {
+  letter-spacing: 0.03rem;
+}
+
+>>>>>>> f30c08d48754b891632152139497891fcc144e30

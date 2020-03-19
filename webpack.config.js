@@ -12,7 +12,11 @@ module.exports = {
         }
       },
       {
+<<<<<<< HEAD
         test: /\.(s[ac]ss|css)$/i,
+=======
+        test: /\.s[ac]ss$/i,
+>>>>>>> f30c08d48754b891632152139497891fcc144e30
         use: [
           'style-loader',
           'css-loader',
