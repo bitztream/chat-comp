@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 
 const db = require('./db/chat.js');
 
@@ -9,7 +12,7 @@ app.get('/api', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.send(chats);
+        res.send(chats[0]);
       }
     })
 });

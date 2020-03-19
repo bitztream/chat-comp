@@ -8,6 +8,8 @@ const Wrap = styled.section`
   border-left: 1px solid #303030; 
   border-right: 1px solid #303030;
   max-width: 424px;
+  min-height: 100%;
+  max-height: 100%;
   position: relative;
   flex: 1;
   margin: auto;

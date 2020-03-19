@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-
 import Button from '../../global/Button';
-
-import Arrow from '../../icons/Arrow';
-
-import Gifter from './Gifter';
-import Cheerer from './Cheerer';
 
 require('./styles.scss');
 
-class Header extends Component {
+class Input extends Component {
   constructor() {
     super();
 
@@ -31,17 +25,13 @@ class Header extends Component {
 
   render() {
     return (
-      <section className="caro">
-        <Button onClick={this.handleChange}>
-          <Arrow/>
-        </Button>
-        {(this.state.gifter) ? <Gifter/> : <Cheerer/>} 
-        <Button className="right" onClick={this.handleChange}> 
-          <Arrow/>
-        </Button> 
+      <section id="chat-input">
+        <div className="chatBox">
+          <textarea placeholder="Send a message"></textarea>
+        </div>
       </section>
     );
   }
 }
 
-export default Header;
+export default Input;                         

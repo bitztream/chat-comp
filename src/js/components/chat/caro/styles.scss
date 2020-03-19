@@ -4,12 +4,13 @@ section.caro {
   align-content: center;
   flex: 1;
   min-width: 424px;
-  min-height: 87px;
+  max-height: 87px;
   padding: 0; 
   border-bottom: 1px solid #303030;
   header {
+    user-select: none;
     min-width: 0;
-    min-height: 0;
+    max-height: 87px;
     border: 0;
     padding: 9px;
     display: flex;
