@@ -177,7 +177,7 @@ db.once('open', function() {
     let msgLocal = list.map((name, x)=>{
       return {
         user: userLocal[x],
-        text: (Math.floor(Math.random()*9) % 7 === 0) ? faker.lorem.sentence() : faker.lorem.sentences()
+        text: (Math.floor(Math.random()*9) % 7 === 0) ? faker.lorem.sentences() : faker.lorem.sentence()
       }
     });
 

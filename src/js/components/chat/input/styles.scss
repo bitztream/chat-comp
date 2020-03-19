@@ -1,0 +1,38 @@
+#chat-input {
+  max-height: 114.5px;
+  min-height: 114.5px;
+  display: flex;
+  flex: 1;
+  .chatBox {
+    width: 400px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    height: auto;
+    .focus {
+    }
+    textarea {
+      width: 100%;
+      margin: 0;
+      color: #efeff1;
+      padding: .8rem .5rem 0 .5rem;
+      font-size: 16px;
+      letter-spacing: 0.1px;
+      line-height: 14px;
+      max-height: 91px;
+      min-height: 47px;
+      -webkit-appearace: none;
+      max-width: 100%;
+      resize: none;
+      outline: none;
+      background: #303030;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      font-family: inherit;
+      transition: box-shadow .1s ease-in, border .1s ease-in, background-color .1s ease-in;
+      &:focus {
+        background: black;
+        border-color: #ad00ff;
+      }
+    }
+  }
+}

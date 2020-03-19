@@ -1,0 +1,41 @@
+section.caro {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex: 1;
+  min-width: 424px;
+  max-height: 87px;
+  padding: 0; 
+  border-bottom: 1px solid #303030;
+  header {
+    user-select: none;
+    min-width: 0;
+    max-height: 87px;
+    border: 0;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      background: #303030;
+    }
+    h5 {
+      font-weight: 500;
+      margin: 0;
+      font-size: 18px;
+      flex: 1;
+      letter-spacing: 0.1px;
+      text-align: center;
+    }
+    h6 {
+      margin: 0;
+      letter-spacing: 0.07px;
+      font-weight: 400;
+      font-size: 15px;
+    }
+  }
+  .grabber {
+    width: 50px;
+    height: 6.25px;
+  }
+}
+
