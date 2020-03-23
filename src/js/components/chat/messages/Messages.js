@@ -28,9 +28,10 @@ class Messages extends Component {
   render() {
     if (this.props.msgs) {
       var msgs = this.props.msgs.map((msg, x) => {
-        return (
-          <div>
-            <p>{msg.text}</p>
+        console.log(msg.user.color);
+				return (
+          <div key={msg._id}>
+            <p><span className={msg.user.color}>{msg.user.name}</span>: {msg.text}</p>
           </div>
         );
       });

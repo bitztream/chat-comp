@@ -110,9 +110,30 @@ const list = [
   "aachang10"
 ]
 
+let colors = [
+	'red',
+	'blue',
+	'green',
+	'fireBrick',
+	'coral',
+	'yellowGreen',
+	'orangeRed',
+	'seaGreen',
+	'goldenRod',
+	'chocolate',
+	'cadetBlue',
+	'dodgerBlue',
+	'hotPink',
+	'blueViolet',
+	'springGreen'
+];
+
 const user = new mongoose.Schema({
   name: String,
   type: String,
+  color: String,
+	gifts: Number,
+  cheers: Number,
   url: String,
   avatar: String,
   splash: String,
@@ -138,16 +159,11 @@ const chat = new mongoose.Schema({
 });
 
 let db = mongoose.connection;
-
 let Chats = mongoose.model('Chats', chat);
 
 let modList = new Array(Math.floor(1 + Math.random() * 10)).fill(1);
-
-console.log(modList);
-
 let vipList = new Array(10).fill(1);
 
-console.log(vipList);
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -162,15 +178,20 @@ db.once('open', function() {
 
       var av = Math.floor((Math.random() * 4));
       var b = Math.floor((Math.random() * 4));
-      var s = Math.floor((Math.random() * 10));
+      var s = Math.floor((Math.random() * 10)); 
+			var c = Math.floor((Math.random() * 15));
+			var t = (Math.random()*10);
 
-      return {
+			return {
         name,
-        type: 'user',
+				color: colors[c], 
+        type: t > 3 ? 'sub' : 'user',
         url: 'https://www.twitch.tv/' + name,
-        avatar: avatars[av],
         splash: splash[s],
-        badges: [badges[b]]
+        avatar: avatars[av],
+        badges: [badges[b]],
+        gifts: b > 2 ? Math.floor(Math.random() * 500) : 0,
+        cheers: t > 7 ? Math.floor(Math.random() * 2000) : 0
       };
     });
 
@@ -185,14 +206,16 @@ db.once('open', function() {
 
       var av = Math.floor((Math.random() * 4));
       var b = Math.floor((Math.random() * 4));
-      var s = Math.floor((Math.random() * 10));
-      
+      var s = Math.floor((Math.random() * 10)); 
+			var c = Math.floor((Math.random() * 15));
+			
       name = Math.floor((Math.random() * list.length));
       name = list[name];
       
       return {
         name,
         type: 'vip',
+				color: colors[c],
         url: 'https://www.twitch.tv/' + name,
         avatar: avatars[av],
         splash: splash[s],
@@ -205,13 +228,15 @@ db.once('open', function() {
       var av = Math.floor((Math.random() * 4));
       var b = Math.floor((Math.random() * 4));
       var s = Math.floor((Math.random() * 10));
-
+			var c = Math.floor((Math.random() * 15));
+			
       name = Math.floor((Math.random() * list.length));
       name = list[name];
  
       return {
         name,
-        type: 'moder',
+        color: colors[c],
+				type: 'moder',
         url: 'https://www.twitch.tv/' + name,
         avatar: avatars[av],
         splash: splash[s],

@@ -4,22 +4,27 @@ const Button = styled.button`
   display: flex;
 	-webkit-appearance: none;
 	border: 0;
-	display: block;
 	outline: none;
+	color: inherit;
   border-radius: 4px;
-  min-width: 37.5px;
-  max-width: 37.5px;
-	background: inherit;
-  min-height: 37.5px;
-  max-height: 37.5px;
+  background: inherit;
+  height: 37.5px;
+	width: 87px;
   position: relative;
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 15px;
+  margin-right: 10px;
+  span {
+    margin-left: 7px;
+	}
   svg {
     display: flex;
-    width: 25px;
-    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
   }
   &.right {
     transform: rotate(180deg);
