@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path');
+
 
 app.use(cors());
 
 const db = require('./db/chat.js');
+
+app.use('/', express.static(path.join(__dirname, './dist')));
+
 
 app.get('/api', (req, res) => {
   db.getChat(req.query.room)
