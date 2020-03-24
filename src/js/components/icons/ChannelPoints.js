@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+
+class Icon extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+    	<svg fill="#a970ff" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+				<g>
+					<path d="M10 6a4 4 0 014 4h-2a2 2 0 00-2-2V6z"></path>
+					<path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0a6 6 0 11-12 0 6 6 0 0112 0z" clipRule="evenodd"></path>
+				</g>
+      </svg>
+    );
+  }
+}
+
+export default Icon;

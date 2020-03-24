@@ -14,27 +14,28 @@ class Header extends Component {
     this.state = {
       value: ""
     };
-
-    this.handleChange = this.handleChange.bind(this);
+		this.something = this.something.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
+  toggle() {
+    this.props.toggle('userVis');
   }
+
+	something(e) {
+		var el = e.target;
+		console.log(el.getBoundingClientRect());
+	
+	}
 
   render() {
     return (
       <header>
-        <Button>
+        <Button onMouseEnter={this.something}>
           <ExpCon/>
         </Button>
         <h3>Stream Chat</h3> 
-        <Button>
+        <Button onClick={this.toggle}>
           <Users/>
         </Button>
       </header>

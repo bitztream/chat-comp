@@ -1,0 +1,23 @@
+section.userList {
+	line-height: 20px;
+	padding: 0;
+	h5 {
+		font-weight: 300;
+		font-size: 16px;
+		margin: 0;
+	}
+}
+
+section.userListHeader {
+	display: flex;
+	background: #1f1f23;
+	padding: 0 12.5px;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid #303030;
+	header {
+		padding: 0 37.5px 0 0;
+		border: 0;
+	}
+}
+

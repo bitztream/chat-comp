@@ -3,8 +3,9 @@ section.caro {
   align-items: center;
   align-content: center;
   flex: 1;
-  min-width: 424px;
+  min-width: 100%;
   max-height: 87px;
+  min-height: 87px;
   padding: 0; 
   border-bottom: 1px solid #303030;
   header {

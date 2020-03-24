@@ -2,9 +2,78 @@
   display: flex;
   flex: 1;
   overflow: auto;
+  position: relative;
   .msgs {
     width: 100%;
     height: auto;
+    position: relative;
     padding: 0 1rem;
+    p {
+      letter-spacing: 0.09px;
+      line-height: 18px;
+      span {
+        font-weight: 500;
+      }
+    }
   }
+}
+
+.red {
+	color: rgb(255,0,0);
+}
+
+.blue {
+	color: rgb(0,0,255);
+}
+
+.green {
+	color: rgb(0,128,0);
+}
+
+.fireBrick { 
+	color: rgb(178,34,34);
+}
+
+.coral {
+	color: rgb(255,127,80);
+}
+
+.yellowGreen {
+	color: rgb(154,205,50);
+}
+
+.orangeRed {
+	color: rgb(255,69,0);
+}
+
+.seaGreen {
+	color: rgb(46,139,87);
+}
+
+.goldenRod { 
+	color: rgb(218,165,32);
+}
+
+.chocolate {
+	color: rgb(210,105,30);
+}
+
+.cadetBlue {
+	color: rgb(95,158,160);
+}
+
+.dodgerBlue {
+	color: rgb(30,144,255);
+}
+
+.hotPink {
+	color: rgb(255,105,180);
+}
+
+.blueViolet { 
+	color: rgb(138,43,226);
+}
+
+.springGreen {
+	color: rgb(0,255,127);
 }
