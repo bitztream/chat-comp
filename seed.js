@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 
-mongoose.connect('mongodb://localhost/chat', {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
+mongoose.connect('mongodb://mongo:27017/chat', {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 const list = [
@@ -132,9 +133,7 @@ const user = new mongoose.Schema({
   name: String,
   type: String,
   color: String,
-	gifts: Number,
-  cheers: Number,
-  url: String,
+	url: String,
   avatar: String,
   splash: String,
   badges: Array
@@ -143,6 +142,8 @@ const user = new mongoose.Schema({
 let avatars = ['pink.png', 'blue.png', 'purple.png', 'orange.png'];
 let splash = ['blank.png', 'one.png', 'two.png', 'three.png'];
 let badges = ['', 'badge1.png', '', '', '', '', '', 'badge3.png', '', ''];
+
+
 
 const msg = new mongoose.Schema({
   user: user,
@@ -159,11 +160,16 @@ const chat = new mongoose.Schema({
 });
 
 let db = mongoose.connection;
+
 let Chats = mongoose.model('Chats', chat);
 
 let modList = new Array(Math.floor(1 + Math.random() * 10)).fill(1);
+
+console.log(modList);
+
 let vipList = new Array(10).fill(1);
 
+console.log(vipList);
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -180,18 +186,15 @@ db.once('open', function() {
       var b = Math.floor((Math.random() * 4));
       var s = Math.floor((Math.random() * 10)); 
 			var c = Math.floor((Math.random() * 15));
-			var t = (Math.random()*10);
-
+			
 			return {
         name,
 				color: colors[c], 
-        type: t > 3 ? 'sub' : 'user',
+        type: 'user',
         url: 'https://www.twitch.tv/' + name,
-        splash: splash[s],
         avatar: avatars[av],
-        badges: [badges[b]],
-        gifts: b > 2 ? Math.floor(Math.random() * 500) : 0,
-        cheers: t > 7 ? Math.floor(Math.random() * 2000) : 0
+        splash: splash[s],
+        badges: [badges[b]]
       };
     });
 

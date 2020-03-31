@@ -25,7 +25,7 @@ class Chat extends Component {
   componentDidMount() {
     
     axios
-    .get('http://localhost:8000/api?room=90')
+    .get('/api?room=90')
     .then((re, er)=>{
       if (re) {
         this.setState((p) => {

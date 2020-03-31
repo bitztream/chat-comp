@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/chat', {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
+mongoose.connect('mongodb://mongo:27017/chat', {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
+
 const db = mongoose.connection;
 
 const user = new mongoose.Schema({
